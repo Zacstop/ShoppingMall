@@ -12,14 +12,24 @@ import {
   TextField,
   Typography
 } from "@mui/material";
-import {ArrowDropDown, Favorite, Visibility} from "@mui/icons-material";
+import {ArrowDropDown, Favorite, Menu, ShoppingCart, Visibility} from "@mui/icons-material";
 import {useRouter} from "next/router";
 
 const styles = makeStyles(() => ({
   header: {
+    width: "100%",
+    height: 180,
+    background: "#fff",
+    "@media (max-width:600px)": {
+      height: 70,
+    },
+  },
+  selectHeader: {
     height: 45,
-    backgroundColor: "white",
     display: "flex",
+    "@media (max-width:600px)": {
+      display: "none",
+    },
   },
   inner: {
     width: "100%",
@@ -31,7 +41,7 @@ const styles = makeStyles(() => ({
   contChoose: {
     width: 60,
     height: 20,
-    marginRight: 40,
+    marginRight: 80,
     padding: 5,
   },
   headerNavL: {
@@ -46,19 +56,21 @@ const styles = makeStyles(() => ({
     fontWeight: 100,
     fontSize: 12,
     "&:hover": {
-      borderBottom: "2px solid purple",
+      textDecoration: "underline 2px purple",
     },
   },
   searchHeader: {
     height: 90,
-    backgroundColor: "white",
     display: "flex",
+    "@media (max-width:600px)": {
+      display: "none",
+    },
   },
   mainLogo: {
     height: 70,
   },
   search: {
-    width: 600,
+    width: "40%",
   },
   cart: {
     borderRadius: 13,
@@ -68,8 +80,10 @@ const styles = makeStyles(() => ({
   },
   categoryHeader: {
     height: 45,
-    backgroundColor: "white",
     display: "flex",
+    "@media (max-width:600px)": {
+      display: "none",
+    },
   },
   headerItems: {
     display: "flex",
@@ -99,7 +113,7 @@ const styles = makeStyles(() => ({
   dropDown: {
     visibility: "hidden",
     opacity: 0,
-    top: 45,
+    top: 43,
     position: "absolute",
     backgroundColor: "#fff",
     borderRadius: "0px 6px 6px 6px",
@@ -118,6 +132,19 @@ const styles = makeStyles(() => ({
       transition: "0.3s",
     },
   },
+  moHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    "@media (min-width:600px)": {
+      display: "none",
+    },
+  },
+  moMainLogo: {
+    height: 60,
+  },
+  moIcons: {
+    padding: 10
+  },
 }))
 
 export default function Header() {
@@ -125,8 +152,8 @@ export default function Header() {
   const router = useRouter()
 
   return (
-    <>
-      <div className={classes.header}>
+    <div className={classes.header}>
+      <div className={classes.selectHeader}>
         <Grid container className={classes.inner}>
           <Grid item>
             <FormControl variant={"standard"} className={classes.contChoose}>
@@ -157,11 +184,11 @@ export default function Header() {
       <Divider/>
       <div className={classes.searchHeader}>
         <Grid container className={classes.inner}>
-          <img src="/images/MainLogo.png" className={classes.mainLogo}/>
-          <TextField variant="filled" placeholder="search..." color="secondary" size="small" className={classes.search}/>
+          <img src="/images/main_logo.png" className={classes.mainLogo}/>
+          <TextField variant="outlined" placeholder="search..." color="secondary" size="small" className={classes.search}/>
           <Button className={classes.cart}>
             <Badge badgeContent={4} color="error">
-              <img src="/images/Cart.png" className={classes.cartImg}/>
+              <img src="/images/cart.png" className={classes.cartImg}/>
             </Badge>
             <ArrowDropDown/>
           </Button>
@@ -207,34 +234,48 @@ export default function Header() {
                   <li className={classes.dropItem}>ca 3</li>
                 </div>
               </div>
-              <div className={classes.categorys}>
-                <div>Sales</div>
-                <div className={classes.dropDown}>
-                  <li className={classes.dropItem}>ca 1</li>
-                  <li className={classes.dropItem}>ca 2</li>
-                  <li className={classes.dropItem}>ca 3</li>
-                </div>
-              </div>
-              <div className={classes.categorys}>
-                <div>Membership</div>
-                <div className={classes.dropDown}>
-                  <li className={classes.dropItem}>ca 1</li>
-                  <li className={classes.dropItem}>ca 2</li>
-                  <li className={classes.dropItem}>ca 3</li>
-                </div>
-              </div>
-              <div className={classes.categorys}>
-                <div>Events</div>
-                <div className={classes.dropDown}>
-                  <li className={classes.dropItem}>ca 1</li>
-                  <li className={classes.dropItem}>ca 2</li>
-                  <li className={classes.dropItem}>ca 3</li>
-                </div>
-              </div>
+              {/*<div className={classes.categorys}>*/}
+              {/*  <div>Sales</div>*/}
+              {/*  <div className={classes.dropDown}>*/}
+              {/*    <li className={classes.dropItem}>ca 1</li>*/}
+              {/*    <li className={classes.dropItem}>ca 2</li>*/}
+              {/*    <li className={classes.dropItem}>ca 3</li>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
+              {/*<div className={classes.categorys}>*/}
+              {/*  <div>Membership</div>*/}
+              {/*  <div className={classes.dropDown}>*/}
+              {/*    <li className={classes.dropItem}>ca 1</li>*/}
+              {/*    <li className={classes.dropItem}>ca 2</li>*/}
+              {/*    <li className={classes.dropItem}>ca 3</li>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
+              {/*<div className={classes.categorys}>*/}
+              {/*  <div>Events</div>*/}
+              {/*  <div className={classes.dropDown}>*/}
+              {/*    <li className={classes.dropItem}>ca 1</li>*/}
+              {/*    <li className={classes.dropItem}>ca 2</li>*/}
+              {/*    <li className={classes.dropItem}>ca 3</li>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </Grid>
           </Grid>
         </Grid>
       </div>
-    </>
+      <div className={classes.moHeader}>
+        <img src="/images/main_logo.png" className={classes.moMainLogo}/>
+        <Grid className={classes.moIcons}>
+          <IconButton>
+            <Favorite htmlColor={"#2b2b2b"}/>
+          </IconButton>
+          <IconButton>
+            <ShoppingCart htmlColor={"#2b2b2b"}/>
+          </IconButton>
+          <IconButton>
+            <Menu htmlColor={"#2b2b2b"}/>
+          </IconButton>
+        </Grid>
+    </div>
+    </div>
   )
 }
