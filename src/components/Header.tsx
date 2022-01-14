@@ -188,7 +188,7 @@ export default function Header() {
           <TextField variant="outlined" placeholder="search..." color="secondary" size="small" className={classes.search}/>
           <Button className={classes.cart}>
             <Badge badgeContent={4} color="error">
-              <img src="/images/cart.png" className={classes.cartImg}/>
+              <img src="/images/cart_icon.png" className={classes.cartImg}/>
             </Badge>
             <ArrowDropDown/>
           </Button>

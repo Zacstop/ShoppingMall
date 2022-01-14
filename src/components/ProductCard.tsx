@@ -10,6 +10,7 @@ const styles = makeStyles(() => ({
     backgroundColor: "#fff",
     borderRadius: 10,
     justifyContent: "center",
+    textAlign: "center",
     margin: "0px 10px",
     transition: "box-shadow .4s",
     "&:hover": {
@@ -21,11 +22,13 @@ const styles = makeStyles(() => ({
     },
   },
   productImageContainer: {
+    width: "auto",
     marginBottom: 20,
     alignItems: "center",
   },
   productImage: {
-    width: 200,
+    width: "auto",
+    maxWidth: 200,
     height: "auto",
     margin: "0px 10px",
   },
@@ -70,13 +73,13 @@ export default function ProductCard() {
   return (
     <div>
       <Grid container className={classes.productCard}>
-        <Grid item style={{textAlign: "center"}}>
+        <Grid item>
           <div>
           <img src='/images/product1.jpeg' className={classes.productImage}/>
           </div>
           <div className={classes.productInfo}>
             <Typography className={classes.productName}>Way it is</Typography>
-            <Typography className={classes.productPrice}>$753</Typography>
+            <Typography className={classes.productPrice}>$ 753</Typography>
             <div className={classes.productFeature}>
               <IconButton>
                 <AddShoppingCart htmlColor={"#2b2b2b"}/>

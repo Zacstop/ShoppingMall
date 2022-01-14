@@ -31,6 +31,8 @@ export default function MainShowCase() {
       <Box className={classes.inner}>
         <Grid container className={classes.showCase}>
           <ProductCard/>
+          <ProductCard/>
+          <ProductCard/>
         </Grid>
       </Box>
     </div>

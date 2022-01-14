@@ -58,7 +58,7 @@ export default function MainBanner() {
           <img src='/images/delivery_icon.png' className={classes.advantagesIcon}/>
           <div>
             <Typography variant="body2">FREE SHIPPING & RETURN</Typography>
-            <Typography className={classes.advantagesText}>Free shipping for orders over $9</Typography>
+            <Typography className={classes.advantagesText}>Free shipping for orders $9</Typography>
           </div>
         </Grid>
         <Grid item className={classes.advantages}>
