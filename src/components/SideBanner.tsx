@@ -4,17 +4,17 @@ import {makeStyles} from "@mui/styles";
 
 const styles = makeStyles(() => ({
   sidebar: {
-    width: 345,
-    height: 620,
+    width: "100%",
+    height: "auto",
   },
   sidebarBannerImage: {
-    width: 345,
-    height: 620,
+    width: "100%",
+    height: "auto",
     borderRadius: 10,
   },
 }))
 
-export default function SubBanner() {
+export default function SideBanner() {
   const classes = styles()
 
   return (

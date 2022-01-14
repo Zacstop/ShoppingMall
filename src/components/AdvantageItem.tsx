@@ -34,12 +34,17 @@ const styles = makeStyles(() => ({
     },
   },
   advantagesIcon: {
-    height: 80,
+    width: "30%",
+    height: "auto",
     marginRight: 20,
+    "@media (max-width:600px)": {
+      height: 80,
+    },
   },
   advantagesText: {
     color: "#666666",
     fontSize: 15,
+    opacity: .8,
   },
 }))
 
@@ -52,21 +57,21 @@ export default function MainBanner() {
         <Grid item className={classes.advantages}>
           <img src='/images/delivery_icon.png' className={classes.advantagesIcon}/>
           <div>
-            <Typography variant="body1">FREE SHIPPING & RETURN</Typography>
+            <Typography variant="body2">FREE SHIPPING & RETURN</Typography>
             <Typography className={classes.advantagesText}>Free shipping for orders over $9</Typography>
           </div>
         </Grid>
         <Grid item className={classes.advantages}>
           <img src='/images/wallet_icon.png' className={classes.advantagesIcon}/>
           <div>
-            <Typography variant="body1">MONEY BACK GUARANTEE</Typography>
+            <Typography variant="body2">MONEY BACK GUARANTEE</Typography>
             <Typography className={classes.advantagesText}>100% money back guarantee</Typography>
           </div>
         </Grid>
         <Grid item className={classes.advantages}>
           <img src='/images/headphone_icon.png' className={classes.advantagesIcon}/>
           <div>
-            <Typography variant="body1">ONLINE SUPPORT 24/7</Typography>
+            <Typography variant="body2">ONLINE SUPPORT 24/7</Typography>
             <Typography className={classes.advantagesText}>24/7 online support</Typography>
           </div>
         </Grid>
