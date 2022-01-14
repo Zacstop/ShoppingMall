@@ -100,10 +100,10 @@ const styles = makeStyles(() => ({
     borderRadius: "6px 6px 0px 0px",
     position: "relative",
     cursor: "pointer",
+    transition: "0.5s",
     "&:hover": {
       backgroundColor: "#f0f0f0",
       boxShadow: "inset .2px .2px rgba(5, 5, 5, .10)",
-      transition: "0.5s",
     },
     "&:hover $dropDown": {
       visibility: "visible",
@@ -127,9 +127,9 @@ const styles = makeStyles(() => ({
     borderRadius: 4,
     textAlign: "center",
     listStyle: "none",
+    transition: "0.3s",
     "&:hover": {
       backgroundColor: "#ddd",
-      transition: "0.3s",
     },
   },
   moHeader: {
